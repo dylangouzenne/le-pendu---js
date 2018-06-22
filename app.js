@@ -11,7 +11,7 @@ var init_lettrechoisi = 0;
 var nb_eror = 0;
 var lettre_eror = [];
 
-
+//$(document).ready(function jouer_partie(){
 
 for(var i=0 ; i<splitString.length ; i++){
 	mot_mystere.push('*');
@@ -155,11 +155,11 @@ $("#Z").click(function (){
 });
 
 $("#boutons").click(function(){
-	
+
 	for(var i = 0; i < splitString.length; i++){
-		
+
 		if(lettrechoisi == splitString[i]){
-			mot_mystere[i] = splitString[i] 
+			mot_mystere[i] = splitString[i]
 			mot_mystere.splice(mot_mystere[i], lettrechoisi);
 			$("#display").html("Devinez le mot qui est cacher : "+mot_mystere);
 			init_lettrechoisi = init_lettrechoisi +100;
@@ -168,14 +168,17 @@ $("#boutons").click(function(){
 			init_lettrechoisi --;
 		}
 	}
-	
+
 	if(init_lettrechoisi<0){
 		alert("cette lettre n'est pas présente dans ce mot...");
 	 	nb_eror++;
+		//$("#histoire_erreur").html(<img src='pendu_'+nb_eror+'.gif'>);
 	 	$("#erreur1").html("vous avez fais "+nb_eror+" erreur");
 		lettre_eror.push(lettrechoisi);
 		$("#erreur2").html("les lettre suivantes ne sont pas présente dans le mot caché : "+lettre_eror);
-	};
-	
+	}
+
 	init_lettrechoisi = 0;
-});
+})
+
+//});
