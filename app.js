@@ -170,15 +170,18 @@ $("#boutons").click(function(){
 	}
 
 	if(init_lettrechoisi<0){
-		alert("cette lettre n'est pas présente dans ce mot...");
-	 	nb_eror++;
-		//$("#histoire_erreur").html(<img src='pendu_'+nb_eror+'.gif'>);
-	 	$("#erreur1").html("vous avez fais "+nb_eror+" erreur");
-		lettre_eror.push(lettrechoisi);
-		$("#erreur2").html("les lettre suivantes ne sont pas présente dans le mot caché : "+lettre_eror);
+			alert("cette lettre n'est pas présente dans ce mot...");
+	 		nb_eror++;
+			document.images["pendu"].src="img/pendu_"+nb_eror+".jpg";
+	 		$("#erreur1").html("vous avez fais "+nb_eror+" erreur");
+			lettre_eror.push(lettrechoisi);
+			$("#erreur2").html("les lettre suivantes ne sont pas présente dans le mot caché : "+lettre_eror);
+
 	}
 
 	init_lettrechoisi = 0;
+
+
 })
 
 //});
